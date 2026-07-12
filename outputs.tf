@@ -1,3 +1,7 @@
+output "active_directory_domain_service_replica_sets_id" {
+  description = "Map of id values across all active_directory_domain_service_replica_sets, keyed the same as var.active_directory_domain_service_replica_sets"
+  value       = { for k, v in azurerm_active_directory_domain_service_replica_set.active_directory_domain_service_replica_sets : k => v.id }
+}
 output "active_directory_domain_service_replica_sets_domain_controller_ip_addresses" {
   description = "Map of domain_controller_ip_addresses values across all active_directory_domain_service_replica_sets, keyed the same as var.active_directory_domain_service_replica_sets"
   value       = { for k, v in azurerm_active_directory_domain_service_replica_set.active_directory_domain_service_replica_sets : k => v.domain_controller_ip_addresses }
